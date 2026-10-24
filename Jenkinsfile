@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'nohup node app.js &'
+                bat 'powershell -Command "Start-Process node -ArgumentList app.js"'
             }
         }
     }
