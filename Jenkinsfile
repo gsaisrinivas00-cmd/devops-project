@@ -16,7 +16,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                bat 'powershell -Command "Start-Process node -ArgumentList app.js"'
+                bat 'set BUILD_ID=dontKillMe && start "" node app.js'
             }
         }
     }
